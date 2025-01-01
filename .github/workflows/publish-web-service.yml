@@ -25,6 +25,6 @@ jobs:
                 uses: docker/build-push-action@v6
                 with:
                     push: true
-                    tag: colldev/app:latest
+                    tags: colldev/app:latest
 
 
