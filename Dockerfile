@@ -1,4 +1,4 @@
-FROM ruby:3.2
+FROM mcr.microsoft.com/devcontainers/ruby:3.2
 
 RUN apt update && apt add --update --no-cache \
     binutils-gold \
