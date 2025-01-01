@@ -1,0 +1,35 @@
+name: publish-web-service
+
+on:
+    push:
+        branches:
+            - main
+            - create_github_actions
+
+jobs:
+    main:
+        runs-on: ubuntu-latest
+        steps:
+            - 
+                name: Checkout the repository
+                uses: actions/checkout@main
+
+            -
+                name: Setup Docker Buildx
+                uses: docker/setup-buildx-action@v1
+            -
+                name: Log in to Azure
+                uses: azure/docker-login@v2
+                with:
+                    login-server: ${{ secrets.REGISTRY_NAME }}
+                    username: ${{ secrets.DOCKER_USERNAME }}
+                    password: ${{ secrets.DOCKER_PASSWORD }}
+            -
+                name: Build and push Docker Image
+                uses: docker/build-push-action@v6
+                with:
+                    context: .
+                    push: true
+                    tags: ${{ secrets.REGISTRY_NAME }}/app:latest
+
+
