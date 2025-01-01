@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/ruby:3.2
 
-RUN apt update && apt add --update --no-cache \
+RUN apt update && apt upgrade \
     binutils-gold \
     build-base \
     curl \
