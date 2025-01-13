@@ -13,7 +13,7 @@ class PerformanceController < ApplicationController
 
   def submit
     # 値の確認だけ必要。金曜日に合流させる予定。
-    if params[:value] == session[:current_answer]
+    if params[:value].to_i == session[:current_answer]
       # 値をリセットする
       session[:current_answer] = 0
       redirect_to action: :success
