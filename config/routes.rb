@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   # resources :performance
   root controller: "front_page", action: :index
+  get 'performance/start', controller: "performance", action: :start
   get '/performance', controller: "performance", action: :index
   post '/performance/submit', controller: "performance", action: :submit
   get '/performance/success', controller: "performance", action: :success
