@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/performance/submit', controller: "performance", action: :submit
   get '/performance/success', controller: "performance", action: :success
   get '/performance/fail', controller: "performance", action: :fail
+  get '/performance/complete', controller: "performance", action: :complete
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

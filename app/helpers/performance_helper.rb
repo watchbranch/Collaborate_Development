@@ -10,4 +10,5 @@ module PerformanceHelper
         Rails.logger.debug "Session current_answer: #{session[:current_answer]}"
         return str + ".mp3"
     end
+
 end
