@@ -15,7 +15,8 @@ module PerformanceHelper
     if random_number.nil?
       Rails.logger.debug "All sounds have been correctly answered."
       return nil # すべて正解済みならnilを返す
-    
+    end
+
     session[:current_answer] = random_number
     Rails.logger.debug "Session current_answer: #{session[:current_answer]}"
     return "#{random_number}.mp3"
