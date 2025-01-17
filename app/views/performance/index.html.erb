@@ -33,9 +33,9 @@
 </head>
 <body>
     <div class="button-container">
-        <% ramdom_audio_file = get_ramdom_audio_file %>
+        <% random_audio_file = get_random_audio_file %>
         <P><%#= ramdom_audio_file %></P>
-        <%= audio_tag ramdom_audio_file, autoplay: true, controls: true %>
+        <%= audio_tag random_audio_file, autoplay: true, controls: true %>
         <%#= audio_tag "0.mp3", autoplay: true, controls: true %>
     </div>
     <form action="/performance/submit" method="POST">
