@@ -1,14 +1,23 @@
 module PerformanceHelper
-    def random_sound_id
-      rand(1..9)
-    end
+  # 1～9の範囲から過去に正解した値を除外してランダムな値を返す
+  def random_sound_id(excluded_answers = [])
+    available_answers = (1..9).to_a - excluded_answers
+    return nil if available_answers.empty? # すべて正解済みならnilを返す
 
-    def get_ramdom_audio_file
-        ramdom_number = random_sound_id
-        str = ramdom_number.to_s
-        session[:current_answer] = ramdom_number
-        Rails.logger.debug "Session current_answer: #{session[:current_answer]}"
-        return str + ".mp3"
-    end
+    available_answers.sample
+  end
 
+  # ランダムな音声ファイルを取得する
+  def get_random_audio_file
+    excluded_answers = session[:correct_answered_colors] || []
+    random_number = random_sound_id(excluded_answers)
+
+    if random_number.nil?
+      Rails.logger.debug "All sounds have been correctly answered."
+      return nil # すべて正解済みならnilを返す
+    
+    session[:current_answer] = random_number
+    Rails.logger.debug "Session current_answer: #{session[:current_answer]}"
+    return "#{random_number}.mp3"
+  end
 end
