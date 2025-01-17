@@ -17,10 +17,18 @@ class PerformanceController < ApplicationController
 
   end
 
+  def complete
+
+  end
+
   def submit
     if params[:value].to_i == session[:current_answer]
+      # 正しく答えたら色の組み合わせを追加する。毎回ソートして評価できるようにする。
+      session[:correct_answered_colors].push(params[:value].to_i)
+      session[:correct_answered_colors] = session[:correct_answered_colors].sort
       # 値をリセットする
       session[:current_answer] = 0
+      Rails.logger.debug "Session current correct_answered_colors: #{session[:correct_answered_colors]}"
       redirect_to action: :success
     else
       session[:current_answer] = 0
