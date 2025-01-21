@@ -21,4 +21,14 @@ module PerformanceHelper
     Rails.logger.debug "Session current_answer: #{session[:current_answer]}"
     return "#{random_number}.mp3"
   end
+
+  def is_button_display(number)
+    for var in session[:correct_answered_colors] do
+      if var == number
+        return false
+      end
+    end
+
+    return true
+  end
 end
