@@ -31,4 +31,10 @@ module PerformanceHelper
 
     return true
   end
+
+  def show_result()
+    correct_ans = (session[:user_attempts][0] / (session[:user_attempts][0] + session[:user_attempts][1])) * 100
+    Rails.logger.debug "Session current correct_answered_colors: #{correct_ans}"
+    return correct_ans
+  end
 end
