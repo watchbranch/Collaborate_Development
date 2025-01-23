@@ -31,9 +31,11 @@ class PerformanceController < ApplicationController
       # 値をリセットする
       session[:current_answer] = 0
       Rails.logger.debug "Session current correct_answered_colors: #{session[:correct_answered_colors]}"
+      session[:user_attempts][0] += 1
       redirect_to action: :success
     else
       session[:current_answer] = 0
+      session[:user_attempts][1] += 1
       redirect_to action: :fail
     end
   end
