@@ -19,33 +19,86 @@
             border: none;
             color: white;
             font-size: 24px;
-            border-radius: 10px;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .btn1 { background-color: #FF5733; }
-        .btn2 { background-color: #FFBD33; }
-        .btn3 { background-color: #DFFF33; }
-        .btn4 { background-color: #75FF33; }
-        .btn5 { background-color: #33FF57; }
-        .btn6 { background-color: #33FFBD; }
-        .btn7 { background-color: #339FFF; }
-        .btn8 { background-color: #8D33FF; }
-        .btn9 { background-color: #FF33A6; }
+        /* 丸ボタンの機能 */
+        .btn1, .btn6, .btn9 {
+            background-color: #FF5733;
+            border-radius: 50%;
+        }
+        /* 楕円形ボタン */
+        .btn2, .btn4, .btn7 {
+            background-color: #FFBD33;
+            border-radius: 50px;
+            width: 120px; /* 横幅を広げる */
+            height: 60px; /* 高さを縮める */
+        }
+        /* 四角形ボタン */
+        .btn3, .btn5, .btn8 {
+            background-color: #DFFF33;
+            border-radius: 10px; /* 四角形（デフォルトの角丸） */
+        }
     </style>
 </head>
 <body>
-
+    <div class="button-container">
+        <!-- 動的にオーディオファイルを表示 -->
+        <% random_audio_file = get_random_audio_file %>
+        <p><%#= random_audio_file %></p>
+        <%= audio_tag random_audio_file, autoplay: true, controls: true %>
+    </div>
+    <form action="/performance/submit" method="POST">
         <div class="button-container">
-        <button type="submit" name="value" value="1" class="btn1" onclick="audio_tag("1.mp3", autoplay:false, controls:true)">1</button>
-        <button type="submit" name="value" value="2" class="btn2">2</button>
-        <button type="submit" name="value" value="3" class="btn3">3</button>
-        <button type="submit" name="value" value="4" class="btn4">4</button>
-        <button type="submit" name="value" value="5" class="btn5">5</button>
-        <button type="submit" name="value" value="6" class="btn6">6</button>
-        <button type="submit" name="value" value="7" class="btn7">7</button>
-        <button type="submit" name="value" value="8" class="btn8">8</button>
-        <button type="submit" name="value" value="9" class="btn9">9</button>
+            <!-- ボタン定義 -->
+            <% is_display1 = is_button_display(1) %>
+            <% if is_display1 %>
+                <button type="submit" name="value" value="1" class="btn1">C</button>
+            <% end %>
+
+            <% is_display2 = is_button_display(2) %>
+            <% if is_display2 %>
+                <button type="submit" name="value" value="2" class="btn2">F²</button>
+            <% end %>
+
+            <% is_display3 = is_button_display(3) %>
+            <% if is_display3 %>
+                <button type="submit" name="value" value="3" class="btn3">G¹</button>
+            <% end %>
+
+            <% is_display4 = is_button_display(4) %>
+            <% if is_display4 %>
+                <button type="submit" name="value" value="4" class="btn4">F¹</button>
+            <% end %>
+
+            <% is_display5 = is_button_display(5) %>
+            <% if is_display5 %>
+                <button type="submit" name="value" value="5" class="btn5">G²</button>
+            <% end %>
+
+            <% is_display6 = is_button_display(6) %>
+            <% if is_display6 %>
+                <button type="submit" name="value" value="6" class="btn6">C¹</button>
+            <% end %>
+
+            <% is_display7 = is_button_display(7) %>
+            <% if is_display7 %>
+                <button type="submit" name="value" value="7" class="btn7">F</button>
+            <% end %>
+
+            <% is_display8 = is_button_display(8) %>
+            <% if is_display8 %>
+                <button type="submit" name="value" value="8" class="btn8">G</button>
+            <% end %>
+
+            <% is_display9 = is_button_display(9) %>
+            <% if is_display9 %>
+                <button type="submit" name="value" value="9" class="btn9">C²</button>
+            <% end %>
         </div>
+    </form>
 
     <a href="/">戻る</a>
 </body>
