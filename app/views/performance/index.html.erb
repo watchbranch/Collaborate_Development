@@ -36,81 +36,73 @@
         <% random_audio_file = get_random_audio_file %>
         <P><%#= random_audio_file %></P>
         <%= audio_tag random_audio_file, autoplay: true, controls: true %>
-        <%#= audio_tag "0.mp3", autoplay: true, controls: true %>
     </div>
     <form action="/performance/submit" method="POST">
         <div class="button-container">
 
             <% is_display1 = is_button_display(1) %>
-            <P><%#= is_display1 %></P>
+
             <% if is_display1 %>
-                <button type="submit" name="value" value="1" class="btn1">1</button>
+                <button type="submit" name="value" value="1" class="btn1">C</button>
 	        <% else %>
-		        <button type="submit" name="value" value="1" class="btn1" style="display: none;">1</button>
+		        <button type="submit" name="value" value="1" class="btn1" style="display: none;">C</button>
 	        <% end %>
 
             <% is_display2 = is_button_display(2) %>
-            <P><%#= is_display2 %></P>
             <% if is_display2 %>
-                <button type="submit" name="value" value="2" class="btn2">2</button>
+                <button type="submit" name="value" value="2" class="btn2">F²</button>
 	        <% else %>
-		        <button type="submit" name="value" value="2" class="btn2" style="display: none;">2</button>
+		        <button type="submit" name="value" value="2" class="btn2" style="display: none;">F²</button>
 	        <% end %>
 
             <% is_display3 = is_button_display(3) %>
-            <P><%#= is_display3 %></P>
             <% if is_display3 %>
-                <button type="submit" name="value" value="3" class="btn3">3</button>
+                <button type="submit" name="value" value="3" class="btn3">G¹</button>
 	        <% else %>
-		        <button type="submit" name="value" value="3" class="btn3" style="display: none;">3</button>
+		        <button type="submit" name="value" value="3" class="btn3" style="display: none;">G¹</button>
 	        <% end %>
 
             <% is_display4 = is_button_display(4) %>
-            <P><%#= is_display4 %></P>
             <% if is_display4 %>
-                <button type="submit" name="value" value="4" class="btn4">4</button>
+                <button type="submit" name="value" value="4" class="btn4">F¹</button>
 	        <% else %>
-		        <button type="submit" name="value" value="4" class="btn4" style="display: none;">4</button>
+		        <button type="submit" name="value" value="4" class="btn4" style="display: none;">F¹</button>
 	        <% end %>
 
             <% is_display5 = is_button_display(5) %>
-            <P><%#= is_display5 %></P>
             <% if is_display5 %>
-                <button type="submit" name="value" value="5" class="btn5">5</button>
+                <button type="submit" name="value" value="5" class="btn5">G²</button>
 	        <% else %>
-		        <button type="submit" name="value" value="5" class="btn5" style="display: none;">5</button>
+		        <button type="submit" name="value" value="5" class="btn5" style="display: none;">G²</button>
 	        <% end %>
 
             <% is_display6 = is_button_display(6) %>
-            <P><%#= is_display6 %></P>
             <% if is_display6 %>
-                <button type="submit" name="value" value="6" class="btn6">6</button>
+                <button type="submit" name="value" value="6" class="btn6">C¹</button>
 	        <% else %>
-		        <button type="submit" name="value" value="6" class="btn6" style="display: none;">6</button>
+		        <button type="submit" name="value" value="6" class="btn6" style="display: none;">C¹</button>
 	        <% end %>
 
             <% is_display7 = is_button_display(7) %>
-            <P><%#= is_display7 %></P>
             <% if is_display7 %>
-                <button type="submit" name="value" value="7" class="btn7">7</button>
+                <button type="submit" name="value" value="7" class="btn7">F</button>
 	        <% else %>
-		        <button type="submit" name="value" value="7" class="btn7" style="display: none;">7</button>
+		        <button type="submit" name="value" value="7" class="btn7" style="display: none;">F</button>
 	        <% end %>
 
             <% is_display8 = is_button_display(8) %>
-            <P><%#= is_display8 %></P>
             <% if is_display8 %>
-                <button type="submit" name="value" value="8" class="btn8">8</button>
+                <button type="submit" name="value" value="8" class="btn8">G</button>
 	        <% else %>
-		        <button type="submit" name="value" value="8" class="btn8" style="display: none;">8</button>
+		        <button type="submit" name="value" value="8" class="btn8" style="display: none;">G</button>
 	        <% end %>
 
             <% is_display9 = is_button_display(9) %>
-            <P><%#= is_display9 %></P>
             <% if is_display9 %>
-                <button type="submit" name="value" value="9" class="btn9">9</button>
+                <button type="submit" name="value" value="9" class="btn9">C²</button>
 	        <% else %>
-		        <button type="submit" name="value" value="9" class="btn9" style="display: none;">9</button>
+		        <button type="submit" name="value" value="9" class="btn9" style="display: none;">C²</button>
+
 	        <% end %>
 
         </div>
