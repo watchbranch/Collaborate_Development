@@ -6,7 +6,9 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version　ruby 3.2.6? (2024-04-23 revision af471c0e01) [x86_64-linux]
-Rails 7.0.8.7
+
+Rails 7.0.4.3
+
 
 * System dependencies
 
