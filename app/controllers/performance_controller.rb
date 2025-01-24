@@ -11,6 +11,10 @@ class PerformanceController < ApplicationController
     redirect_to action: :index, status: :see_other
   end
 
+  def tutorial
+
+  end
+
   def success
 
   end
