@@ -45,61 +45,65 @@
 </head>
 <body>
     <div class="button-container">
-        <!-- 動的にオーディオファイルを表示 -->
-        <% random_audio_file = get_random_audio_file %>
-        <p><%#= random_audio_file %></p>
-        <%= audio_tag random_audio_file, autoplay: true, controls: true %>
-    </div>
-    <form action="/performance/submit" method="POST">
         <div class="button-container">
-            <!-- ボタン定義 -->
-            <% is_display1 = is_button_display(1) %>
-            <% if is_display1 %>
-                <button type="submit" name="value" value="1" class="btn1">C</button>
-            <% end %>
-
-            <% is_display2 = is_button_display(2) %>
-            <% if is_display2 %>
-                <button type="submit" name="value" value="2" class="btn2">F²</button>
-            <% end %>
-
-            <% is_display3 = is_button_display(3) %>
-            <% if is_display3 %>
-                <button type="submit" name="value" value="3" class="btn3">G¹</button>
-            <% end %>
-
-            <% is_display4 = is_button_display(4) %>
-            <% if is_display4 %>
-                <button type="submit" name="value" value="4" class="btn4">F¹</button>
-            <% end %>
-
-            <% is_display5 = is_button_display(5) %>
-            <% if is_display5 %>
-                <button type="submit" name="value" value="5" class="btn5">G²</button>
-            <% end %>
-
-            <% is_display6 = is_button_display(6) %>
-            <% if is_display6 %>
-                <button type="submit" name="value" value="6" class="btn6">C¹</button>
-            <% end %>
-
-            <% is_display7 = is_button_display(7) %>
-            <% if is_display7 %>
-                <button type="submit" name="value" value="7" class="btn7">F</button>
-            <% end %>
-
-            <% is_display8 = is_button_display(8) %>
-            <% if is_display8 %>
-                <button type="submit" name="value" value="8" class="btn8">G</button>
-            <% end %>
-
-            <% is_display9 = is_button_display(9) %>
-            <% if is_display9 %>
-                <button type="submit" name="value" value="9" class="btn9">C²</button>
-            <% end %>
+                <button type="submit" name="value" value="1" class="btn1" id="btn1">C</button>
+                <button type="submit" name="value" value="2" class="btn2" id="btn2">F²</button>
+                <button type="submit" name="value" value="3" class="btn3" id="btn3">G¹</button>
+                <button type="submit" name="value" value="4" class="btn4" id="btn4">F¹</button>
+                <button type="submit" name="value" value="5" class="btn5" id="btn5">G²</button>
+                <button type="submit" name="value" value="6" class="btn6" id="btn6">C¹</button>
+                <button type="submit" name="value" value="7" class="btn7" id="btn7">F</button>
+                <button type="submit" name="value" value="8" class="btn8" id="btn8">G</button>
+                <button type="submit" name="value" value="9" class="btn9" id="btn9">C²</button>
         </div>
-    </form>
-
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        var btn4 = document.getElementById("btn4");
+        var btn5 = document.getElementById("btn5");
+        var btn6 = document.getElementById("btn6");
+        var btn7 = document.getElementById("btn7");
+        var btn8 = document.getElementById("btn8");
+        var btn9 = document.getElementById("btn9");
+        var btn1_audio = new Audio('<%= audio_path("1.mp3") %>');
+        var btn2_audio = new Audio('<%= audio_path("2.mp3") %>');
+        var btn3_audio = new Audio('<%= audio_path("3.mp3") %>');
+        var btn4_audio = new Audio('<%= audio_path("4.mp3") %>');
+        var btn5_audio = new Audio('<%= audio_path("5.mp3") %>');
+        var btn6_audio = new Audio('<%= audio_path("6.mp3") %>');
+        var btn7_audio = new Audio('<%= audio_path("7.mp3") %>');
+        var btn8_audio = new Audio('<%= audio_path("8.mp3") %>');
+        var btn9_audio = new Audio('<%= audio_path("9.mp3") %>');
+        btn1.addEventListener('click', function() {
+            btn1_audio.play();
+        }, false);
+        btn2.addEventListener('click', function() {
+            btn2_audio.play();
+        }, false);
+        btn3.addEventListener('click', function() {
+            btn3_audio.play();
+        }, false);
+        btn4.addEventListener('click', function() {
+            btn4_audio.play();
+        }, false);
+        btn5.addEventListener('click', function() {
+            btn5_audio.play();
+        }, false);
+        btn6.addEventListener('click', function() {
+            btn6_audio.play();
+        }, false);
+        btn7.addEventListener('click', function() {
+            btn7_audio.play();
+        }, false);
+        btn8.addEventListener('click', function() {
+            btn8_audio.play();
+        }, false);
+        btn9.addEventListener('click', function() {
+            btn9_audio.play();
+        }, false);
+    </script>
+    </div>
     <a href="/">戻る</a>
 </body>
 </html>
